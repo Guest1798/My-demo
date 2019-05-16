@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+        }
+
+        body {
+            background-color: rgb(22, 19, 19);
+            position: relative;
+        }
+
+        .box {
+            width: 402px;
+            height: 128px;
+            overflow: hidden;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .box span {
+            font-size: 6rem;
+            font-weight: 700;
+            color: white;
+        }
+
+        .box span:before,
+        .box span::after {
+            content: attr(data-content);
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            animation: tiktok .4s infinite;
+        }
+
+        .box span::before {
+            color: #D81B60;
+            animation-delay: .1s;
+        }
+
+        .box span::after {
+            color: #039BE5;
+            animation-delay: .3s;
+        }
+
+        @keyframes tiktok {
+            0% {
+                left: -6px;
+                top: -6px;
+            }
+
+            25% {
+                left: -3px;
+                top: 0px;
+            }
+
+            50% {
+                left: 3px;
+                top: 0px;
+            }
+
+            75% {
+                left: 0px;
+                top: 3px;
+            }
+
+            100% {
+                left: -3px;
+                top: 0px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <span data-content="TIK-TOK">TIK-TOK</span>
+    </div>
+</body>
+
+</html>
