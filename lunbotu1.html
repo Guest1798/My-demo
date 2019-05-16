@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+
+        }
+
+        li {
+            list-style: none;
+        }
+
+        .box {
+            margin-top: 60px;
+            width: 100%;
+            height: 360px;
+        }
+
+        .box .imgul {
+            width: 1200px;
+            height: 100%;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .box .imgul li {
+            position: absolute;
+            border-radius: 10px;
+            box-shadow: 0px 2px 18px 0 rgba(17, 17, 17, 0.56);
+        }
+
+        .posleft {
+            width: 400px;
+            height: 240px;
+            left: 0;
+            top: 60px;
+        }
+
+        .poscenter {
+            width: 600px;
+            height: 360px;
+            left: 300px;
+            z-index: 99;
+        }
+
+        .posright {
+            width: 400px;
+            height: 240px;
+            right: 0;
+            top: 60px;
+        }
+
+        .wallpaper0 {
+            background: url(https://i0.hdslb.com/bfs/archive/5397701d4d281232fdf3653f84f7ff5671d0c47a.png@880w_440h.png) no-repeat;
+            background-size: cover;
+            animation: left2right 1800ms ease;
+        }
+
+        .wallpaper1 {
+            
+            background: url(https://i0.hdslb.com/bfs/archive/4ef5ba97bd2cc4a4f2bd487f31997fcf1a870783.jpg@880w_440h.webp) no-repeat;
+            background-size: cover;
+            animation: center2left 900ms ease;
+
+        }
+
+        .wallpaper2 {
+
+            background: url(https://i0.hdslb.com/bfs/archive/ee069cd5b45046a2e6fb341696a54a81cae5a422.jpg@880w_440h.webp) no-repeat;
+            background-size: cover;
+            animation: right2center 900ms ease;
+        }
+
+        @keyframes center2left {
+            from {
+                left: 300px;
+                transform: scale(1);
+            }
+
+            to {
+                transform: scale(0.67);
+                left: 0;
+            }
+        }
+
+        @keyframes right2center {
+            from {
+                left: 800px;
+                transform: scale(1);
+            }
+
+            to {
+                transform: scale(1.5);
+                left: 300px;
+            }
+        }
+
+        @keyframes left2right {
+            from {
+                left: 0;
+                opacity: 0;
+            }
+
+            to {
+                left: 800px;
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <ul class="imgul" id="imgul">
+            <li class="wallpaper0 posleft"></li>
+            <li class="wallpaper1 poscenter"></li>
+            <li class="wallpaper2 posright"></li>
+        </ul>
+
+        <ul class="indic">
+
+            <li></li>
+            <li></li>
+            <li></li>
+
+        </ul>
+    </div>
+
+</body>
+
+</html>
+
+<script>
+    var i = 0;
+    // setInterval(function () {
+    //     var imgs = document.getElementById("imgul");
+    //     console.log(imgs.children);
+    //     for (i; i < imgs.children.length; i++) {
+    //         console.log("ok");
+    //         imgs.children[i].classList.remove("wallpaper" + i);
+    //         imgs.children[i].classList.add("wallpaper" + (i++));
+    //         if (i > 2) {
+    //             i = 0;
+    //         }
+    //     }
+
+    // }, 1000);
+</script>
